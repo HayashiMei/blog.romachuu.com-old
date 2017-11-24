@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo," />
+  <meta name="keywords" content="Roma's diary" />
 
 
 
@@ -79,18 +79,14 @@
 
 
 
-<meta name="description" content="记录一下本站的搭建流程（说好的今天早点睡呢？！ 安装Hexo参考 Hexo document 使用Let’s Encrypt生成SSL证书参考Certbot安装Certbot $ sudo apt-get update $ sudo apt-get install software-properties-common ">
-<meta name="keywords" content="Hexo">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hexo + Nginx + Let&#39;s encrypt">
-<meta property="og:url" content="http://blog.romachuu.com/2017/11/23/hexo-nginx-ssl/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://blog.romachuu.com/categories/index.html">
 <meta property="og:site_name" content="Roma&#39;s diary">
-<meta property="og:description" content="记录一下本站的搭建流程（说好的今天早点睡呢？！ 安装Hexo参考 Hexo document 使用Let’s Encrypt生成SSL证书参考Certbot安装Certbot $ sudo apt-get update $ sudo apt-get install software-properties-common $ sudo add-apt-repository ppa:certbot/ce">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-24T15:33:07.120Z">
+<meta property="og:updated_time" content="2017-11-24T14:18:28.445Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo + Nginx + Let&#39;s encrypt">
-<meta name="twitter:description" content="记录一下本站的搭建流程（说好的今天早点睡呢？！ 安装Hexo参考 Hexo document 使用Let’s Encrypt生成SSL证书参考Certbot安装Certbot $ sudo apt-get update $ sudo apt-get install software-properties-common $ sudo add-apt-repository ppa:certbot/ce">
+<meta name="twitter:title" content="categories">
 
 
 
@@ -120,13 +116,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.romachuu.com/2017/11/23/hexo-nginx-ssl/"/>
+  <link rel="canonical" href="http://blog.romachuu.com/categories/"/>
 
 
 
 
 
-  <title>Hexo + Nginx + Let's encrypt | Roma's diary</title>
+  <title>categories | Roma's diary</title>
   
 
 
@@ -285,220 +281,40 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.romachuu.com/2017/11/23/hexo-nginx-ssl/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Roma">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Roma's diary">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">Hexo + Nginx + Let's encrypt</h1>
-        
+	<h1 class="post-title" itemprop="name headline">categories</h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <div class="category-all-page">
+            <div class="category-all-title">
+                暂无分类
+            </div>
+            <div class="category-all">
               
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-23T05:36:27+00:00">
-                2017-11-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+            </div>
+          </div>
+        
+      </div>
       
       
-
-      
-        <p>记录一下本站的搭建流程（说好的今天早点睡呢？！</p>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>参考 <a href="https://hexo.io/zh-tw/docs/" target="_blank" rel="noopener">Hexo document</a></p>
-<h2 id="使用Let’s-Encrypt生成SSL证书"><a href="#使用Let’s-Encrypt生成SSL证书" class="headerlink" title="使用Let’s Encrypt生成SSL证书"></a>使用Let’s Encrypt生成SSL证书</h2><p>参考<a href="https://certbot.eff.org/#ubuntuxenial-other" target="_blank" rel="noopener">Certbot</a>安装Certbot</p>
-<pre><code>$ sudo apt-get update
-$ sudo apt-get install software-properties-common
-$ sudo add-apt-repository ppa:certbot/certbot
-$ sudo apt-get update
-$ sudo apt-get install certbot
-</code></pre><p>我是使用webroot方式生成的证书，path是网站的根目录，domain是你的域名</p>
-<pre><code>$ sudo certbot certonly --webroot -w path -d domain
-</code></pre><p>执行成功后会生成证书和证书的密钥</p>
-<pre><code>/etc/letsencrypt/live/example.com/fullchain.pem
-/etc/letsencrypt/live/example.com/privkey.pem
-</code></pre><a id="more"></a>
-<h2 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h2><pre><code>$ apt-get install nginx
-</code></pre><h2 id="配置Nginx"><a href="#配置Nginx" class="headerlink" title="配置Nginx"></a>配置Nginx</h2><p>为Hexo建立一个新的配置文件</p>
-<pre><code>$ vi /etc/nginx/sites-enabled/hexo
-</code></pre><p>我为其配置了下面这些内容</p>
-<pre><code>server {
-    listen 80;
-    listen [::]:80 ipv6only=on;
-    server_name example.com; #你希望绑定的域名
-    root /var/hexo/public; #网站的根目录
-    index index.html index.htm;
-    location / {
-        try_files $uri $uri/ /index.html;
-    }
-}
-
-server {
-    listen 443 ssl;
-    listen [::]:443 ssl ipv6only=on;
-    server_name example.com;
-
-    ssl on;
-    ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem; #证书
-    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem; #证书的密钥
-
-    ssl_prefer_server_ciphers on;
-    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-    ssl_ciphers EECDH+aRSA+AES;
-
-    root /var/hexo/public;
-    index index.html index.htm;
-
-    location / {
-        try_files $uri $uri/ /index.html;
-    }
-}
-
-server {
-    listen 443 ssl;
-    listen [::]:443 ssl;
-    server_name example.com;
-
-    ssl on;
-    ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem; #证书
-    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem; #证书的密钥
-
-    ssl_prefer_server_ciphers on;
-    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-    ssl_ciphers EECDH+aRSA+AES;
-
-    root /var/hexo/public;
-    index index.html index.htm;
-
-    location / {
-        try_files $uri $uri/ /index.html;
-    }
-}
-</code></pre><p>删除原有的default文件</p>
-<pre><code>$ rm /etc/nginx/sites-enabled/default
-</code></pre><p>测试Nginx的配置文件是否有误</p>
-<pre><code>$ nginx -t
-</code></pre><p>最后重启Nginx</p>
-<pre><code>$ /etc/init.d/nginx restart
-</code></pre><p>lay了lay了…</p>
-
       
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/11/22/hello-world/" rel="next" title="Hello World!">
-                <i class="fa fa-chevron-left"></i> Hello World!
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
@@ -529,17 +345,8 @@ server {
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -610,22 +417,6 @@ server {
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Hexo"><span class="nav-number">1.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Let’s-Encrypt生成SSL证书"><span class="nav-number">2.</span> <span class="nav-text">使用Let’s Encrypt生成SSL证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Nginx"><span class="nav-number">3.</span> <span class="nav-text">安装Nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Nginx"><span class="nav-number">4.</span> <span class="nav-text">配置Nginx</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

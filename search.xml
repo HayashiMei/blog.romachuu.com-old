@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Hexo + Nginx + Let's encrypt]]></title>
+    <url>%2F2017%2F11%2F23%2Fhexo-nginx-ssl%2F</url>
+    <content type="text"><![CDATA[记录一下本站的搭建流程（说好的今天早点睡呢？！ 安装Hexo参考 Hexo document 使用Let’s Encrypt生成SSL证书参考Certbot安装Certbot $ sudo apt-get update $ sudo apt-get install software-properties-common $ sudo add-apt-repository ppa:certbot/certbot $ sudo apt-get update $ sudo apt-get install certbot 我是使用webroot方式生成的证书，path是网站的根目录，domain是你的域名 $ sudo certbot certonly --webroot -w path -d domain 执行成功后会生成证书和证书的密钥 /etc/letsencrypt/live/example.com/fullchain.pem /etc/letsencrypt/live/example.com/privkey.pem 安装Nginx$ apt-get install nginx 配置Nginx为Hexo建立一个新的配置文件 $ vi /etc/nginx/sites-enabled/hexo 我为其配置了下面这些内容 server { listen 80; listen [::]:80 ipv6only=on; server_name example.com; #你希望绑定的域名 root /var/hexo/public; #网站的根目录 index index.html index.htm; location / { try_files $uri $uri/ /index.html; } } server { listen 443 ssl; listen [::]:443 ssl ipv6only=on; server_name example.com; ssl on; ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem; #证书 ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem; #证书的密钥 ssl_prefer_server_ciphers on; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_ciphers EECDH+aRSA+AES; root /var/hexo/public; index index.html index.htm; location / { try_files $uri $uri/ /index.html; } } server { listen 443 ssl; listen [::]:443 ssl; server_name example.com; ssl on; ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem; #证书 ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem; #证书的密钥 ssl_prefer_server_ciphers on; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_ciphers EECDH+aRSA+AES; root /var/hexo/public; index index.html index.htm; location / { try_files $uri $uri/ /index.html; } } 删除原有的default文件 $ rm /etc/nginx/sites-enabled/default 测试Nginx的配置文件是否有误 $ nginx -t 最后重启Nginx $ /etc/init.d/nginx restart lay了lay了…]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World!]]></title>
+    <url>%2F2017%2F11%2F22%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[现在是2017-11-23 4:27，博客SSL啥的都搞好了，不行了，睡了睡了···]]></content>
+  </entry>
+</search>
